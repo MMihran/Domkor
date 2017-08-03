@@ -1,0 +1,116 @@
+/*IMPORT LIBS*/
+@import (less) "../libs/bootstrap/css/bootstrap.css";
+@import (less) "../libs/fontawesome/font-awesome.css";
+@import (less) "../libs/selectize/css/selectize.css";
+@import (less) "../libs/slick/css/slick.css";
+
+
+/*IMPORT MIXINS*/
+@import "../less/mixins/flexboxes.less";
+@import "../less/mixins/font_face.less";
+@import "../less/mixins/main_mixins.less";
+
+/*IMPORT FONTS*/
+.font(Akzidenz, "../fonts/Akzidenz/AkzidenzGroteskPro-Regular");
+.font(Akzidenz, "../fonts/Akzidenz Light/AkzidenzGroteskPro-Light", 100);
+.font(Akzidenz, "../fonts/Akzidenz Medium/AkzidenzGroteskPro-Md", 600);
+.font(Apercu, "../fonts/Apercu/ApercuPro-Regular");
+.font(Apercu, "../fonts/Apercu Light/ApercuPro-Light", 100);
+.font(Apercu, "../fonts/Apercu Medium/ApercuPro-Medium", 600);
+
+
+/*MAIN RULES*/
+@import "../less/bootstrap-fix.less";
+html{
+	overflow: visible !important;
+}
+body{
+	font-size: @font-normal;
+	font-family: @prime-font;
+	background-color: #f2f2f2;
+}
+h1 {
+	text-align: center; 
+	font-family: @second-font; 
+	font-weight: 100;
+	font-size: 60px;
+}
+h2{
+	font-family: @second-font;
+	margin: 35px 0;
+	font-size: 36px;
+	font-weight: 100;
+}
+.sample-header{
+	font-size: 60px;
+	margin-top: 105px;
+	margin-bottom: 40px;
+	font-family: @second-font;
+	text-align: center;
+	font-weight: 100;
+}
+.header-text{
+	max-width: 850px;
+	font-weight: 100;
+	margin: 0 auto;
+	margin-bottom: 35px;
+	text-align: center;
+}
+.pagination {
+	margin-top: 25px;
+	font-size: 0;
+	li{
+		width: 67px;
+		font-size: 16px;
+		margin: 1px;
+		height: 57px;
+		line-height: 57px;
+		text-align: center;
+		background-color: #f2f2f2;
+		display: inline-block;
+		font-weight: 600;
+		a{
+			display: block;
+			height: 100%;
+		}
+		&.active, &:hover{
+			background-color: @dark-blue;
+			color: #fff;
+		}
+	}
+}
+section[class*="c-"],
+section[class*="com-"],
+section[class*="tabs"]{
+	h2{
+		color: @header-color;
+		text-align: center;
+	}
+	p {
+		font-weight: 100;
+	}
+}
+.modal.fade.in{
+	padding-right: 0 !important;
+}
+
+/*IMPORT LESS FILES*/
+@import "../less/variables.less";
+@import "../less/header_footer.less";
+@import "../less/index.less";
+@import "../less/career.less";
+@import "../less/icons.less";
+@import "../less/honors.less";
+@import "../less/contacts1.less";
+@import "../less/contacts2.less";
+@import "../less/gallery.less";
+@import "../less/mass-media.less";
+@import "../less/general.less";
+@import "../less/news.less";
+@import "../less/project.less";
+@import "../less/magazine.less";
+@import "../less/company.less";
+
+
+/*IMPORT_MEDIA*/
+@import "../less/media.less";

@@ -1,0 +1,423 @@
+.c-title {
+	margin: 65px 0 57px 0;
+	position: relative;
+	z-index: 5;
+}
+
+.c-personal {
+	padding-bottom: 74px;
+	&__title {
+		margin-top: 46px;
+	}
+
+	&__text {
+		text-align: center;
+		margin-top: 49px;
+		color: @text-color-2;
+	}
+}
+
+
+.c-reviews {
+	text-align: center;
+	&__bg { 
+		width: 100%;
+		min-height: 540px;
+		background: url(../img/career_reviews_bg.jpg) center center no-repeat;
+		background-size: cover;
+	}
+
+	&__desc {
+		color: @text-color-2;
+	}
+
+	&__wrapper {
+		margin: 0 160px;
+	}
+
+	&__title {
+
+		padding-top: 60px;
+		margin-bottom: 50px;
+	}
+
+	&__slider {
+		text-align: center;
+		margin-top: 28px;
+		.slick-dots  {
+			display: inline-block;
+			margin-top: 22px;
+			li {
+				&.slick-active {
+					button {
+						background: @dark-blue;
+					}
+					
+				}
+
+				float: left;
+				button {
+					margin: 0 4px;
+					font-size: 0;
+					width: 14px;
+					height: 14px;
+					border-radius: 50%;
+					border: 0;
+					background: @header-color;
+				}
+			}		
+
+		}
+	}
+
+	&__slideImg {
+		display: block;
+		position: absolute;
+		left: 0;
+	}
+
+	&__block {
+		&_left {
+			position: relative;
+			padding-left: 241px;
+			text-align: left;
+			float: left;
+			min-height: 204px;
+		}
+	}
+
+	&__slideTiltle {
+		margin-top: 25px;
+	    line-height: 0.9;
+	}
+
+	&__partnerName {
+		font-family: @second-font;
+		font-weight: 600;
+	}
+
+	&__slideText {
+		margin-top: 22px;
+		font-family: @second-font;
+		
+	}
+}
+
+.c-vacancies {
+	margin-bottom: 120px;
+	&__title {
+		margin: 58px 0 30px 0;
+	}
+
+	&__jobs {
+		.flex-display(flex);
+		.flex-flow(row wrap);
+		.justify-content(center);
+	}
+
+	&__job {
+		display: block;
+		position: relative;
+		width: 400px;
+		height: 167px;
+		
+		&_left {
+			margin-right: 28px;
+		}
+	}
+
+	&__jobWrapp {
+		
+		height: inherit;
+		width: 100%;
+		background: #fff;
+		.flex-display(flex);
+		.flex-flow(row wrap);		
+		.justify-content(center);
+		.align-items(center);
+	}
+
+	&__btn {
+		position: absolute;
+		right: 23px;
+		bottom: 20px;
+		display: block;
+		width: 21px;
+		height: 21px;
+		background: url(../img/vacancies_ico.png);
+	}
+
+	&__text {
+		text-align: center;
+		font-family: @prime-font;
+		font-weight: 100;
+		margin-top: 45px;
+		color: @text-color-2;
+	} 
+}
+
+.c-btn {
+	background: @dark-blue;
+	color: #ffffff;
+	display: block;
+	border: 0;
+	&:hover, &:focus {
+		color: #fff!important;
+	}
+
+}
+
+.c-contact {
+	padding-bottom: 65px;
+	&__wrapper {
+		margin: 0 auto;
+		max-width: 830px;
+		min-height: 214px;
+		background: #ffffff;
+	}
+
+	&__title {
+		margin: 40px 0 30px 0;
+	}
+
+	&__blocks {
+		.flex-display(flex);
+		.flex-flow(row wrap);
+		.justify-content(center);
+	}
+
+	&__block {
+		&_left {
+			width: 240px;
+			margin-right: 16px;
+		}
+
+		&_right {
+			width: 247px;
+		}
+	}
+
+	&__phone, &__download, &__send {
+		font-family: @prime-font;
+		font-weight: 600;
+		display: block;
+	}
+
+	&__download {
+		display: inline-block;
+		border-bottom: 1px solid #00a1e0;
+    	margin-bottom: 6px;
+    	line-height: 1.5;
+	}
+
+	&__send {
+		text-align: left;
+		padding: 0 16px 0 20px;
+		width: 247px;
+		height: 44px;
+		i {
+			float: right;
+    		font-size: 20px;
+		}
+	}
+
+	&__mail {
+
+	}
+}
+
+
+.social {
+	text-align: center;
+	&__tiltle {
+		margin: 0;
+		display: inline-block;
+		margin-right: 16px;
+		vertical-align: top;
+	}
+
+	&__buttons {
+		display: inline-block;
+		vertical-align: top;
+		a {
+			display: block;
+			cursor: pointer;
+			float: left;
+			margin-right: 5px;
+			a:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+
+}
+
+
+.hr-line {
+	background: #d9d9d9;
+	margin: 59px 0 64px 0;
+} 
+
+.c-traditions {
+	padding-bottom: 65px;
+	&__title {
+		margin: 0 0 40px 0;
+	}
+
+
+	&__text {
+		margin-bottom: 50px;
+		text-align: center;
+		font-family: @prime-font;
+		font-weight: 100;
+		font-size: 25px;		
+	}
+
+	&__text,&__blocksTitle, &__list li {
+		color: @text-color-2;
+	}
+
+	&__wrapper {
+		max-width: 1130px
+	}
+
+	&__blocks {
+		.flex-display(flex);
+		.flex-flow(row wrap);
+		.justify-content(center);
+	}
+
+	&__block {
+		&_left {
+			width: 481px;
+			margin-right: 108px;
+		}
+
+		&_right {
+			width: 300px;			
+		}
+	}
+
+	&__blocksTitle {
+	    line-height: 1.4;
+		margin: 20px 0 45px 0;
+		font-family: @prime-font;
+		font-weight: 600;
+		font-size: @font-normal;
+	}
+
+	&__list {
+		li {
+			font-family: @prime-font;
+			font-weight: 100;
+			margin-bottom: 25px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+.c-gallery {
+	padding-bottom: 64px;
+	&__title {
+		margin: 0 0 36px 0;
+	}
+
+	&__sliderWrapper {
+		position: relative; 
+		margin-left: 80px;
+		padding: 0 80px;
+	}
+
+	&__slideWrapp {
+		display: inline-block;
+	}
+
+	&__slider {
+		.slick-slide {
+			text-align: center;
+		}
+
+		img {
+			display: inline-block;
+		}
+		
+	}
+
+	&__slideTitle {
+		text-align: left;
+		font-size: @font-tiny;
+		font-family: @prime-font;
+		font-weight: 100;
+		color: #898989;
+		margin-top: 17px;
+	}
+
+	&__slideArrow  {
+		position: absolute;
+		top: 62px;
+		width: 57px;
+		height: 57px;
+		border-radius: 50%;
+		background: #2ba2d3;
+		cursor: pointer;
+		.flex-display(flex);
+		.flex-flow(row wrap);
+		.justify-content(center);
+		.align-items(center);
+
+		i {
+			font-size: 22px;
+			color: #ffffff;
+		}
+
+		&_left {
+			left: 0px;
+		}
+
+		&_right {
+			right: 0px
+		}
+	}
+} 
+
+
+.c-video {
+	padding-bottom: 60px;
+	text-align: center;
+	&__text, &__help {
+		font-family: @prime-font;
+		font-weight: 100;
+		color: @text-color-2;
+	}
+
+	&__text {
+		
+		margin-bottom: 30px;
+	}
+
+	.video {
+		margin: 0 auto;
+		max-width: 724px;
+	}
+
+	&__help {
+		margin-top: 30px;
+	}
+
+	&__btn {
+		display: inline-block;
+		margin-top: 10px;
+		width: 140px;
+		height: 45px;
+		background: #00a1e0;
+	}
+
+	&__mobileText {
+		display: none;
+	}
+
+}
