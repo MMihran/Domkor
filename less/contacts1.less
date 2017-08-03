@@ -3,6 +3,8 @@
 	margin-bottom: 35px;
 	.map-wrap{
 		position: relative;
+		overflow: hidden;
+		height: 570px;
 	}
 	.contact-form .input-wrap button{
 		background-color: @green;
@@ -37,6 +39,13 @@
 		line-height: 1.2;
 	}
 	#map{
-		height: 570px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		min-height: 100%;
+		width: 100%;
 	}
 }

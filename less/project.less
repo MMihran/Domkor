@@ -54,13 +54,11 @@
 
 .project-btn{
 	display: inline-block;
-	background-color: @light-orange;
 	font-family: @prime-font;
 	transition: all .3s;
 	font-weight: 600;
 	color: #fff;
 	&:hover{
-		background-color: @orange;
 		color: #fff;
 	}
 }
@@ -108,7 +106,10 @@
 		}
 	}
 	.items-wrap{
+		position: relative;
+		z-index: 2;
 		margin-top: 115px;
+		box-shadow: 0 25px 35px -10px rgba(0,0,0,.1);
 		.flex-display();
 		.justify-content(space-between);
 	}
@@ -143,6 +144,9 @@
 
 
 .project-bim{
+	h2{
+		text-align: center;
+	}
 	.container{
 		background: url(../img/bim-bg.png) center center no-repeat;
 		margin-bottom: -25px;
@@ -250,7 +254,6 @@
 .p-gallery{
 	background-color: #fff;
 	.c-gallery__slideArrow{
-		background-color: @light-orange;
 	}
 }
 .p-video{
@@ -260,7 +263,6 @@
 		margin-bottom: 10px;
 	}
 	.c-video__btn{
-		background-color: @light-orange;
 		display: inline-block;
 	}
 }
@@ -273,17 +275,12 @@
 		box-shadow: 0 0 100px rgb(245,240,234);
 		margin-bottom: 75px;
 		.item-head{
-			border-color: @light-orange;
 		}
 		.similar-items .slick-arrow{
-			background-color: @light-orange;
 		}
 		.similar-top h2{
-			color: @light-orange;
 		}
 		.orange{
-			color: @light-orange;
-			border-color: @light-orange;
 		}
 	}
 }

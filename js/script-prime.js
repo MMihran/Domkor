@@ -27,10 +27,7 @@ $(document).ready(function () {
 			var cPosR = c.offset().left + c.width();
 			var objPosR = obj.offset().left + obj.width() + 25;
 			
-			console.log(cPosR);
-			console.log(objPosR);
-			console.log(obj.width());
-			console.log("===============");
+			
 			if(cPosR < objPosR){
 				$(obj).css("margin-right", (2*(+objPosR - +cPosR) + 25) + "px");
 
@@ -143,22 +140,27 @@ $(document).ready(function () {
 	*
 	*/
 	(function(){
-		function hoverChange(){
-			if(!($(this).hasClass("object-long-top"))) {
-				$(".object").off('mouseenter', hoverChange);
-			}else{
-				return;
-			}
-			var className = ($(this).attr("class")).split(" ")[1];
-			$(this).parents(".objects-wrap").children(".object-long-top").removeClass().addClass("object " + className);
-			$(this).removeClass().addClass("object object-long-top");
-			setTimeout(function(){
-		        $('.object').on('mouseenter', hoverChange);
-		    }, 1000);
-		}
-		$('.object').on('mouseenter', hoverChange);
-		
-	
+		// function hoverChange(){
+		// 	if(!($(this).hasClass("object-long-top"))) {
+		// 		$(".object").off('mouseenter', hoverChange);
+		// 	}else{
+		// 		return;
+		// 	}
+		// 	var className = ($(this).attr("class")).split(" ")[1];
+		// 	$(this).parents(".objects-wrap").children(".object-long-top").removeClass().addClass("object " + className);
+		// 	$(this).removeClass().addClass("object object-long-top");
+		// 	setTimeout(function(){
+		//         $('.object').on('mouseenter', hoverChange);
+		//     }, 1000);
+		// }
+		// $('.object').on('mouseenter', hoverChange);
+		$(".object").hover(function(e){
+			$(".object").css("z-index", 5);
+			$(this).css("z-index", 8);
+		}, function(e){
+			var self = this;
+			setTimeout(function(){$(self).attr("style", "")}, 1000);
+		});
 
 		var respTimeout;
 
@@ -175,7 +177,7 @@ $(document).ready(function () {
 	              settings: {
 	              	variableWidth: true,
 	                arrows: true,
-	                swipeToSlide: true
+	                swipeToSlide: true, touchThreshold: 30
 	              }
 	            },
 	            {
@@ -183,16 +185,16 @@ $(document).ready(function () {
 	              settings: {
 	              	variableWidth: true,
 	                arrows: true,
-	                swipeToSlide: true
+	                swipeToSlide: true, touchThreshold: 30
 	              }
 	            }
 				]
 			});
-			if (($(".jquery-check-sm").is(":visible")) || ($(".jquery-check-xs").is(":visible"))) {
-				$(".object").off('mouseenter', hoverChange);
-			}else{
-				$('.object').on('mouseenter', hoverChange);
-			}
+			// if (($(".jquery-check-sm").is(":visible")) || ($(".jquery-check-xs").is(":visible"))) {
+			// 	$(".object").off('mouseenter', hoverChange);
+			// }else{
+			// 	$('.object').on('mouseenter', hoverChange);
+			// }
 
 		}
 
@@ -278,7 +280,7 @@ $(document).ready(function () {
 			useTransform: false,
 			infinite: false,
 			arrows: false,
-			swipeToSlide: true,
+			swipeToSlide: true, touchThreshold: 30,
 			responsive: [
 			{
 				breakpoint: 1012,
@@ -287,7 +289,7 @@ $(document).ready(function () {
 					infinite: true,
 					slidesToShow: 3,
 					variableWidth: false,
-					swipeToSlide: true
+					swipeToSlide: true, touchThreshold: 30
 				}
 			},
 			{
@@ -297,7 +299,7 @@ $(document).ready(function () {
 					variableWidth: false,
 					slidesToShow: 2,
 					infinite: true,
-					swipeToSlide: true,
+					swipeToSlide: true, touchThreshold: 30,
 				}
 			}
 			]
@@ -316,7 +318,6 @@ $(document).ready(function () {
 	        var scale = 1;
 	        var vid = $(this).get(0);
 	        var imgTarget = $(this).data("destination");
-	        console.log(imgTarget);
 	        var video_obj = null;
 		    	vid.addEventListener('loadedmetadata', loadedmeta, false);
 	        	vid.addEventListener('loadeddata', loadeddata, false);
@@ -345,7 +346,6 @@ $(document).ready(function () {
 		            img.src = canvas.toDataURL();
 		            $.when($("#video-gallery .gallery-item[data-target="+ imgTarget +"]").append(img)).then(function(){
 		            	vid.removeEventListener('timeupdate', func);
-		            	console.log("finally: " + vid.currentTime);
 		            	vid.currentTime = 0;
 		            });
 	            }, 500);
@@ -449,14 +449,14 @@ $(document).ready(function () {
 		slidesToShow: 3,
 		arrows: false,
 		adaptiveHeight: true,
-		swipeToSlide: true,
+		swipeToSlide: true, touchThreshold: 30,
 		responsive: [
 		{
 			breakpoint: 1340,
 			settings: {
 				slidesToShow: 2,
 				arrows: true,
-				swipeToSlide: true
+				swipeToSlide: true, touchThreshold: 30
 			} 
 		},
 		{
@@ -464,7 +464,7 @@ $(document).ready(function () {
 			settings: {
 				slidesToShow: 1,
 				arrows: true,
-				swipeToSlide: true
+				swipeToSlide: true, touchThreshold: 30
 			} 
 		},
 		]
@@ -701,7 +701,7 @@ $(document).ready(function () {
 	      breakpoint: 768,
 	      settings: {
 	       	variableWidth: true,
-	  		swipeToSlide: true, 
+	  		swipeToSlide: true, touchThreshold: 30, 
 	      }
     	}
       ]

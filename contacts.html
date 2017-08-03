@@ -350,9 +350,10 @@
 				}
 			 	myMap = new ymaps.Map('map', {
 			        center: center,
-			        zoom : 15
+			        zoom : 15,
+			        controls: []
 				});
-	    		myMap.behaviors.disable(['scrollZoom', 'drag']);
+	    		myMap.behaviors.disable(['scrollZoom']);
 			   });		        
 
 	    	/*МЕТКИ и получение координатов*/
@@ -365,7 +366,6 @@
 				addressArr.push($(this).text());
 				hintArr.push($(this).parents(".panel").find("h4 a").text());
 		    });
-		    console.log(buttonArr);
 		    for (var i = 0; i < addressArr.length; i++) {
 		    	geoResp(i);
 		    }
@@ -378,10 +378,8 @@
 		    		myMap.geoObjects.add(new ymaps.Placemark(res.geoObjects.get(0).geometry.getCoordinates(), {
 			            hintContent: hintArr[i]
 			        }, {
-			            iconLayout: 'default#image',
-			            iconImageHref: 'img/map-pointer.png',
-			            iconImageSize: [134, 153],
-			            iconImageOffset: [-67, -133]
+			            preset: 'islands#icon',
+            			iconColor: '#b2c837'
 			        }));
 		    	});
 		    }

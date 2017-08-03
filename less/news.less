@@ -188,4 +188,41 @@
 		margin-top: 10px;
 		font-size: 14px;
 	}
+	.slick-arrow{
+		width: 30px;
+		height: 30px;
+		line-height: 27px;
+		position: absolute;
+		bottom: 30px;
+		text-alaign: center;
+		font-size: 0;
+		border-radius: 25px;
+		background-color: @dark-blue;
+		font-family: FontAwesome;
+		margin: auto;
+		left: 0;
+		right: 0;
+		border: none;
+		&::after{
+			font-size: 16px;
+			text-align: center;
+			display: inline-block;
+			height: 100%;
+			color: #fff;
+		}
+	}
+	.slick-next{
+		right: -40px;
+		&::after{
+			content: "\f105";
+			margin-left: 2px;
+		}
+	}
+	.slick-prev{
+		left: -40px;
+		&::after{
+			content: "\f104";
+			margin-right: 2px;
+		}
+	}
 }

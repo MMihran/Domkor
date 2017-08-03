@@ -135,11 +135,11 @@
 	.graph-elems{
 		position: absolute;
 		background: url(../img/index-graph.png) center no-repeat;
-		height: 600px;
+		height: 627px;
 	    width: 627px;
 	    background-size: 83%;
 	    top: -40px;
-	    right: 63.4px;
+	    right: 53.4px;
 	    z-index: 6;
 	}
 	.graph-list{
@@ -147,7 +147,7 @@
 		background-color: #fff;
 		display: inline-block;
 		position: absolute;
-		bottom: 180px;
+		bottom: 150px;
 		right: 317px;
 		ul{
 			display: inline-block;
@@ -194,14 +194,14 @@
 		position: relative;
 		width: 100%;
 		height: 750px;
-		overflow: hidden;
 	}	
 	.index-objects-wrap{
 		position: relative;
 	}
 	.object{
 		font-size: 13px;
-		transition: all 1s;
+		transition: all .8s;
+		box-shadow: 0 0 0 #fff;
 		background-color: #fff;
 		display: inline-block;
 		position: absolute;
@@ -230,7 +230,18 @@
 				padding-right: 130px;
 			}
 		}
-			
+		&:hover{			
+			z-index: 8;
+			width: 44%;
+			height: 64%;
+			box-shadow: 0 0 35px #000;
+			.img-wrap{
+				height: 73%;
+			}
+			&~.object{
+				transition: all .8s;
+			}
+		}
 	}	
 	.object-head{
 		display: inline-block;
@@ -248,14 +259,19 @@
 	.object-long-top{
 		width: 44%;
 		height: 64%;
+		transition: all .8s;
 		top: 0;
 		left: 23%;
-		z-index: 7;
+		z-index: 6;
 		.img-wrap{
 			height: 73%;
 		}
+		&:hover{
+			height: 64%;
+		}
 	}
 
+	
 	/*Other objects*/
 	.object-tiny-left{
 		width: 19%;
@@ -265,15 +281,51 @@
 		.img-wrap{
 			height: 75%;
 		}
+		&:hover{
+			left: 0;
+			&~.object-long-top{
+				height: 31%;
+			}
+			& ~ .object-long-bot{
+				top: 31%;
+				left: 44%;
+				width: 23%;
+				height: 45%;
+				.img-wrap{
+					height: 80%;
+				}
+			}
+		}
 	}
 	
 	.object-long-right{
 		width: 27%;
 		height: 31.5%;
 		left: 67%;
-		top: 15%;
+		top: 15.3%;
 		.img-wrap{
 			height: 72%;
+		}
+		&:hover{
+			left: 54%;
+			top: 0;
+			& ~ .object-long-top{
+				height: 31%;
+				width: 31%;
+			}
+			& ~ .object-tiny-left{
+				width: 28%;
+			}
+			& ~ .object-long-bot{
+				top: 31%;
+				height: 33%;
+				width: 25%;
+				left: 29%;
+			}
+			& ~ .object-tiny-bot{
+				left: 40%;
+				width: 27%;
+			}
 		}
 	}
 	.object-tiny-bot{
@@ -284,14 +336,38 @@
 		.img-wrap{
 			height: 68%;
 		}
+		&:hover{
+			left: 0;
+			top: 31%;
+			&~.object-long-top{
+				height: 31%;
+			}
+			& ~ .object-long-bot{
+				top: 31%;
+				left: 44%;
+				width: 23%;
+				height: 45%;
+				.img-wrap{
+					height: 80%;
+				}
+			}
+		}
 	}
 	.object-long-bot{
 		width: 35%;
-		height: 36%;
+		height: 35%;
+		transition: all .8s;
 		top: 64%;
 		left: 32%;
 		.img-wrap{
-			height: 76%;
+			height: 75%;
+		}
+		&:hover{
+			left: 23%;
+			top: 31%;
+			&~.object-long-top{
+				height: 31%;
+			}
 		}
 	}
 	.object-wide-bot{
@@ -301,6 +377,26 @@
 		left: 67%;
 		.img-wrap{
 			height: 82%;
+		}
+		&:hover{
+			left: 54%;
+			top: 31%;
+			& ~ .object-long-top{
+				height: 31%;
+			}
+			& ~ .object-tiny-left{
+				width: 25%;
+			}
+			& ~ .object-long-bot{
+				top: 31%;
+				height: 33%;
+				width: 25%;
+				left: 29%;
+			}
+			& ~ .object-tiny-bot{
+				left: 28%;
+				width: 27%;
+			}
 		}
 	}
 
@@ -314,7 +410,6 @@
 		top: 0;
 		background-color: #fff;
 		font-size: @font-medium;
-		z-index: 8;
 		border: none;
 		.flex-display();
 		.flex-wrap(wrap);

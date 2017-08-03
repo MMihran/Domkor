@@ -163,7 +163,7 @@
 		<div class="container">
 			<div class="video__wrapper">
 				<span class="video__overlay video__toggle"></span>
-				<video id="video">
+				<video id="video" width="640" height="360">
 				  <source src="videoplayback.webm" type="video/webm">
 				  <source src="videoplayback.mp4" type="video/mp4">
 				  Извините, но ваш браузер не поддерживает HTML5 видео
@@ -402,14 +402,15 @@
 					<div class="c-contact__block c-contact__block_left">
 						<span class="c-contact__phone">+7 (8552) 20-34-39</span>
 						<span class="c-contact__mail">Personal@domkor.com</span>
-					</div>
-					<div class="c-contact__block c-contact__block_right">
 						<a href="#" class="c-contact__download">
 							Скачать анкету (135,1 кБ)
 						</a>
-
-						<button class="c-contact__send c-btn">Отправить резюме<i class="fa fa-angle-right" aria-hidden="true"></i></button>
 					</div>
+					<form class="c-contact__block c-contact__block_right">
+						
+						<label class="c-contact__download"><input type="file" name="" class="hidden"> выберите файл</label>
+						<button class="c-contact__send c-btn">Отправить резюме<i class="fa fa-angle-right" aria-hidden="true"></i></button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -545,7 +546,7 @@
 			<div class="video">
 				<div class="video__wrapper">
 					<span class="video__overlay video__toggle"></span>
-					<video id="video">
+					<video id="video" width="640" height="360">
 					  <source src="videoplayback.webm" type="video/webm">
 					  <source src="videoplayback.mp4" type="video/mp4">
 					  Извините, но ваш браузер не поддерживает HTML5 видео
