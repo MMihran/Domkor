@@ -5,6 +5,8 @@
 		cursor: pointer;
 		overflow: hidden;
 		width: 100% !important;
+		height: 0;
+		padding: 0 0 56.25%;
 	}
 
 	&__play {
@@ -28,17 +30,17 @@
 		margin: auto;
 		z-index: 3;
 	}
-	video{
-		
+	iframe{
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100% !important; 
-		max-height: 100% !important;
-		height: auto !important; 
+		height: 100% !important;
 		overflow: hidden;
 		display: block;
 		margin: auto; 
 		z-index: 2; 
 		transition: all .5s;
-		position: relative;
 	}
 	&__overlay{
 		top: 0;
