@@ -261,7 +261,7 @@ $(document).ready(function () {
 
 	gallerySlick();
 	$('#gallery-photo-modal').on('show.bs.modal', function (e) {
-		$(this).addClass("modal-flex");
+			$(this).addClass("modal-flex");
 		
 			$(".gallery-modal .thumbs-wrap").get(0).slick.setPosition();
 		setTimeout(function(){
