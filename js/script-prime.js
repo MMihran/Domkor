@@ -1,7 +1,13 @@
 $(document).ready(function () {
 	//HEADER-SLIDER
 	$(".header-slider").slick({
-		arrows:true
+		arrows:true,
+		slidesToShow: 1,
+		swipeToSlide: true,
+		touchThreshold: 30,
+		nextArrow: ".header-slider-wrap .slick-next",
+		prevArrow: ".header-slider-wrap .slick-prev"
+
 	});
 	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
 	    skrollr.init({
