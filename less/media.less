@@ -1434,7 +1434,7 @@
 			position: absolute;
 			top: 0;
 			bottom: 0;
-			left: 25%;
+			left: 6%;
 			margin: auto;
 			height: 30px;
 		}
@@ -2651,13 +2651,13 @@
 			top: -300px;
 			bottom: -300px;
 			margin: auto;
-			left: -800px;
+			left: -750px;
 			right: -800px;
 			max-width: 100%;
 		}
 
 		.slick-arrows{
-			left: 20%;
+			left: 5%;
 		}
 	}
 }
@@ -2702,8 +2702,34 @@
 		}
 	}
 
-	.header-slider-wrap .slick-arrows{
-		left: 15px;
+	.header-slider-wrap{
+		height: 50px;
+		.slick-slide{
+			height: 50px;
+			width: auto;
+			position: relative;
+		}
+		.slick-slide.slick-current{
+			z-index: 3;
+		}
+		img{
+			min-width: 380px;
+			max-width: 480px;
+			width: 120%;
+		}
+		.slick-arrows{
+			left: 5px;
+			height: 25px;
+		}
+		.slick-arrow{
+			width: 25px;
+			height: 25px;
+			margin: 0;
+			&:before{
+				font-size: 20px;
+				line-height: 13px;
+			}
+		}
 	}
 	/*==========
 	ICONS_MOBILE_XS
