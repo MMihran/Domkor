@@ -9,6 +9,7 @@
 
     <link href="css/style.css" rel="stylesheet">
 
+	<link rel="icon" href="img/favicon.png" sizes="any" type="image/png">
 
 	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
    
@@ -133,12 +134,12 @@
 				  <div class="panel panel-default">
 				    <div class="panel-heading" role="tab" id="contact-head-1">
 				      <h4 class="panel-title contact-head">
-				        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#contact-1" aria-expanded="true" aria-controls="contact-1">
+				        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#contact-1" aria-expanded="false" aria-controls="contact-1">
 				          ООО «Домкор»
 				        </a>
 				      </h4>
 				    </div>
-				    <div id="contact-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="contact-head-1">
+				    <div id="contact-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="contact-head-1">
 				      <div class="panel-body contact">
 				        <div class="contact-block">
 							<p class="contact-address initialMapPos"><span>Республика Татарстан, г. Набережные Челны, пр.Х.туфана, д. 12</span>, Бизнес-Центр «2.18», офис 1201</p>
@@ -424,6 +425,14 @@
 			        controls: []
 				});
 	    		myMap.behaviors.disable(['scrollZoom']);
+	    		$(".contacts2 .panel-title>a").click(function(e){
+	    			var t = setInterval(function(e){
+	    				myMap.container.fitToViewport();
+	    			},40);
+	    			setTimeout(function(e){
+	    				clearInterval(t);
+	    			},400);
+	    		});
 			   });		        
 
 	    	/*МЕТКИ и получение координатов*/
@@ -474,6 +483,9 @@
 			
 	    }
 		
+
+
+
 		$(".contact-form select").selectize();
 		$('.selectize-input input').prop('disabled', true);
 	</script>
