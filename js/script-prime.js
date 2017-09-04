@@ -709,7 +709,9 @@ $(document).ready(function () {
 	      breakpoint: 768,
 	      settings: {
 	       	variableWidth: true,
-	  		swipeToSlide: true, touchThreshold: 30, 
+	  		swipeToSlide: true, 
+	  		touchThreshold: 30,
+	  		slidesToShow: 2
 	      }
     	}
       ]
