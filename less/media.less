@@ -564,6 +564,9 @@
 		.leader-blocks{
 			padding: 0 40px;
 		}
+		.block-visible .text-wrap{
+			width: 500px;
+		}
 	}
 
 	/*==========
@@ -617,7 +620,118 @@
 
 
 
-
+@media only screen and (max-width: 1030px) {
+	
+	.index-objects {
+		position: relative;
+		z-index: 15;
+		.slick-arrow{
+			width: 30px;
+			height: 30px;
+			border: 3px solid @green;
+			background-color: transparent;
+			border-radius: 15px;
+			bottom: 0px;
+			margin: auto;
+			position: absolute;
+			&::after{
+				font-size: 25px;
+				font-family: FontAwesome;
+				color: @green;
+				line-height: 22px;
+			}
+		}
+		.slick-prev{
+			left: 0;
+			right: 45px;
+			&::after{
+				content: "\f104";
+				margin-right: 4px;
+			}
+		}
+		.slick-next{
+			right: 0;
+			left: 45px;
+			&::after{
+				content: "\f105";
+				margin-left: 2px;
+			}
+		}
+		.objects-wrap{
+			height: auto;
+			padding-bottom: 60px;
+		}
+		.object{
+			width: 255px !important;
+			height: 175px !important;
+			position: relative;
+			top: 0 !important;
+			left: 0 !important;
+			margin: 0 5px;
+			box-shadow: none !important;
+			.img-wrap{
+				height: 125px !important;
+			}
+		}
+		.object-text{
+			display: none;
+		}
+		.nav-tabs{
+			position: relative;
+			max-width: 100%;
+			width: 100%;
+			margin: 0 auto 10px;
+			height: 0;
+			overflow: hidden;
+			transition:height .5s;
+			bottom: 4px;
+			>li{
+				width: 100% !important;
+				&.active{
+					display: block;					
+					background: @green;
+					&::after{
+						content: "";
+					}
+					a{
+						color: #000;
+					}
+				}
+				a{
+					height: 100%;
+					line-height: 45px;
+					span{
+						border-color: @green;
+					}
+					&:hover{
+						background-color: @green;
+						color: #000;
+					}
+				}
+			}
+			&.nav-height{
+				height: 200px;
+			}
+		}
+		.obj-nav-toggle{
+			font-size: 18px;
+			font-weight: bold;
+			color: #fff;
+			display: block !important;
+			background-color: @green;
+			height: 42px;
+			cursor: pointer;
+			line-height: 42px;
+			padding: 0 24px;
+			&::after{
+				font-family: FontAwesome;
+				line-height: 45px;
+				content: "\f107";
+				float: right;
+			}
+		}
+	}
+}
 
 
 
@@ -803,115 +917,7 @@
 		}
 	}
 
-	.index-objects {
-		position: relative;
-		z-index: 15;
-		.slick-arrow{
-			width: 30px;
-			height: 30px;
-			border: 3px solid @green;
-			background-color: transparent;
-			border-radius: 15px;
-			bottom: 0px;
-			margin: auto;
-			position: absolute;
-			&::after{
-				font-size: 25px;
-				font-family: FontAwesome;
-				color: @green;
-				line-height: 22px;
-			}
-		}
-		.slick-prev{
-			left: 0;
-			right: 45px;
-			&::after{
-				content: "\f104";
-				margin-right: 4px;
-			}
-		}
-		.slick-next{
-			right: 0;
-			left: 45px;
-			&::after{
-				content: "\f105";
-				margin-left: 2px;
-			}
-		}
-		.objects-wrap{
-			height: auto;
-			padding-bottom: 60px;
-		}
-		.object{
-			width: 255px !important;
-			height: 175px !important;
-			position: relative;
-			top: 0 !important;
-			left: 0 !important;
-			margin: 0 5px;
-			box-shadow: none !important;
-			.img-wrap{
-				height: 125px !important;
-			}
-		}
-		.object-text{
-			display: none;
-		}
-		.nav-tabs{
-			position: relative;
-			max-width: 100%;
-			width: 100%;
-			margin: 0 auto 10px;
-			height: 0;
-			overflow: hidden;
-			transition:height .5s;
-			bottom: 4px;
-			>li{
-				width: 100% !important;
-				&.active{
-					display: block;					
-					background: @green;
-					&::after{
-						content: "";
-					}
-					a{
-						color: #000;
-					}
-				}
-				a{
-					height: 100%;
-					line-height: 45px;
-					span{
-						border-color: @green;
-					}
-					&:hover{
-						background-color: @green;
-						color: #000;
-					}
-				}
-			}
-			&.nav-height{
-				height: 200px;
-			}
-		}
-		.obj-nav-toggle{
-			font-size: 18px;
-			font-weight: bold;
-			color: #fff;
-			display: block;
-			background-color: @green;
-			height: 42px;
-			cursor: pointer;
-			line-height: 42px;
-			padding: 0 24px;
-			&::after{
-				font-family: FontAwesome;
-				line-height: 45px;
-				content: "\f107";
-				float: right;
-			}
-		}
-	}
+	
 
 	.index-articles {
 		.row{
@@ -1325,6 +1331,9 @@
 		}
 		.leader-info, .block-text{
 			font-size: 11px;
+		}
+		.block-visible .text-wrap{
+			width: 350px;
 		}
 	}
 	.com-info__block p{
@@ -2087,6 +2096,8 @@
 	==========*/
 
 	.com-headTitle__navList{
+		position: relative;
+		z-index: 10;
 		font-size: 12px;
 		margin: 0 -12px 15px;
 		li{
@@ -2181,6 +2192,10 @@
 					width: 85px;
 					margin-right: 15px;
 				}
+			}
+			.text-wrap{
+				width: auto;
+				display: block;
 			}
 		}
 		.text-top{
