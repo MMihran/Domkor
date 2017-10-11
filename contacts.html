@@ -325,8 +325,8 @@
 			        controls: []
 				});
 	    		myMap.behaviors.disable(['scrollZoom']);
-			   });		        
-
+			});		        
+	    	
 	    	/*МЕТКИ и получение координатов*/
 			var addressArr = [];
 			var hintArr = [];
@@ -344,14 +344,19 @@
 		    function geoResp(i){
 		    	ymaps.geocode(addressArr[i]).then(function (res) {
 		    		/*прикрепить координаты к кнопкам, чтоб каждый раз не вызывать геокодер*/
-		    		buttonArr[i].attr("data-coordinates", res.geoObjects.get(0).geometry.getCoordinates());
-
-		    		myMap.geoObjects.add(new ymaps.Placemark(res.geoObjects.get(0).geometry.getCoordinates(), {
-			            hintContent: hintArr[i]
-			        }, {
-			            preset: 'islands#icon',
-            			iconColor: '#b2c837'
-			        }));
+		    		$.when(function1()).then(function2());
+		    		function function1(){
+		    			buttonArr[i].attr("data-coordinates", res.geoObjects.get(0).geometry.getCoordinates());
+		    		}
+		    		function function2(){
+		    			myMap.geoObjects.add(new ymaps.Placemark(res.geoObjects.get(0).geometry.getCoordinates(), {
+				            hintContent: hintArr[i]
+				        }, {
+				            preset: 'islands#icon',
+	            			iconColor: '#b2c837'
+				        }));
+		    		}
+		    		
 		    	});
 		    }
 
