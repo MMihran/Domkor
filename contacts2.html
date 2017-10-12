@@ -452,12 +452,22 @@
 		    function geoResp(i){
 		    	ymaps.geocode(addressArr[i]).then(function (res) {
 		    		/*прикрепить координаты к кнопкам, чтоб каждый раз не вызывать геокодер*/
-		    		buttonArr[i].attr("data-coordinates", res.geoObjects.get(0).geometry.getCoordinates());
-
-		    		myMap.geoObjects.add(new ymaps.Placemark(res.geoObjects.get(0).geometry.getCoordinates(), {
-			            preset: 'islands#icon',
-            			iconColor: '#42a3df'
-			        }));
+		    		setTimeout(function(){
+		    			function1();
+		    			setTimeout(function(){
+		    				function2();
+		    			}, 150);
+		    		}, 150);
+		    		function function1(){
+		    			buttonArr[i].attr("data-coordinates", res.geoObjects.get(0).geometry.getCoordinates());
+		    		}
+		    		function function2(){
+		    			console.log(res.geoObjects.get(0).geometry.getCoordinates());
+		    			myMap.geoObjects.add(new ymaps.Placemark(res.geoObjects.get(0).geometry.getCoordinates(), {
+			            	preset: 'islands#icon',
+            				iconColor: '#42a3df'
+			        	}));
+			        }
 		    	});
 		    }
 
